@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import OctahedronExperience, { CharacterCanvas } from "../models/Octahedron";
+import { CharacterCanvas } from "../models/Octahedron";
 
 export default function Footer() {
   return (

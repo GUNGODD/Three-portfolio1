@@ -1,13 +1,11 @@
 "use client";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion-3d"; // Import Framer Motion for 3D
-import * as THREE from "three";
 import { Experience } from "./charecterExperience";
 import { Environment, OrbitControls, Sparkles } from "@react-three/drei";
 
 const ChracterMesh = () => {
-  const ExpRef = useRef<THREE.Mesh>(null!);
+  // @ts-check-ignnore
 
   return (
     <motion.mesh
@@ -21,7 +19,6 @@ const ChracterMesh = () => {
         repeat: Infinity, // Keep the animation running infinitely
         repeatType: "reverse", // Reverses the direction smoothly without stopping
       }}
-      ref={ExpRef}
       scale={3}
     >
       <Sparkles count={20} color="white" size={8} />
@@ -38,40 +35,46 @@ export const CharacterCanvas = () => {
         <ChracterMesh />
 
         <Environment preset="city" />
+        <OrbitControls />
       </Canvas>
     </>
   );
 };
 
-function RotatingOctahedron() {
-  const myMeshRef = useRef<THREE.Mesh>(null!);
+// function RotatingOctahedron() {
+//   type RefType = {
 
-  // Rotate the octahedron
-  useFrame(() => {
-    if (myMeshRef.current) {
-      myMeshRef.current.rotation.x += 0.01;
-      myMeshRef.current.rotation.y += 0.01;
-    }
-  });
+//   }
+//   // @ts-check-ignnore
+//   const myMeshRef = useRef<THREE.Mesh>(null! as THREE.Mesh);
 
-  return (
-    <>
-      <motion.mesh
-        ref={myMeshRef}
-        whileHover={{ scale: 1.8 }}
-        transition={{ duration: 0.3 }}
-      >
-        <octahedronGeometry args={[1, 0]} />
-        <meshNormalMaterial />
-      </motion.mesh>
-    </>
-  );
-}
+//   // Rotate the octahedron
+//   useFrame(() => {
+//     if (myMeshRef.current) {
+//       myMeshRef.current.rotation.x += 0.01;
+//       myMeshRef.current.rotation.y += 0.01;
+//     }
+//   });
 
-export default function OctahedronExperience() {
-  return (
-    <Canvas>
-      <RotatingOctahedron />
-    </Canvas>
-  );
-}
+//   return (
+//     <>
+//       <motion.mesh
+//         // @ts-check-ignnore
+//         ref={myMeshRef}
+//         whileHover={{ scale: 1.8 }}
+//         transition={{ duration: 0.3 }}
+//       >
+//         <octahedronGeometry args={[1, 0]} />
+//         <meshNormalMaterial />
+//       </motion.mesh>
+//     </>
+//   );
+// }
+
+// export default function OctahedronExperience() {
+//   return (
+//     <Canvas>
+//       <RotatingOctahedron />
+//     </Canvas>
+//   );
+// }
