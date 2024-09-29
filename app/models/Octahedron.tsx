@@ -2,7 +2,7 @@
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion-3d"; // Import Framer Motion for 3D
 import { Experience } from "./charecterExperience";
-import { Environment, OrbitControls, Sparkles } from "@react-three/drei";
+import { Environment, Sparkles } from "@react-three/drei";
 
 const ChracterMesh = () => {
   // @ts-check-ignnore
