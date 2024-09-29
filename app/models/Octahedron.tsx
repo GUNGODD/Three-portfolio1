@@ -35,7 +35,6 @@ export const CharacterCanvas = () => {
         <ChracterMesh />
 
         <Environment preset="city" />
-        <OrbitControls />
       </Canvas>
     </>
   );
