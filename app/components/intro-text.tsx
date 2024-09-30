@@ -2,7 +2,7 @@ export default function IntroText() {
   return (
     <>
       <div
-        className="text-5xl  hyphens-auto 
+        className=" text-2xl md:text-5xl  hyphens-auto 
        antialiased tracking-wide leading-20
 
          font-bold m-4  align-baseline text-pretty"

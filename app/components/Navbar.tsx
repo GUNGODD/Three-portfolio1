@@ -12,14 +12,14 @@ export default function Navbar() {
   };
   return (
     <>
-      <div className=" h-20 p-6 last:m-2   relative w-full">
+      <div className=" h-28 p-6 last:m-2   relative w-full">
         <motion.div
           className=" w-dvw 
           
 
           backdrop-blur-lg fixed top-0 left-0  z-10` "
         >
-          <ul className="  mx-4 md:mx-8 md:p-4 p-4  font-bold text-xl  md:text-3xl  flex justify-between ">
+          <ul className="  mx-4 md:mx-8 md:p-4 p-4  font-bold text-xl  md:text-5xl  flex justify-between ">
             <motion.button whileHover={HoverStyle}>About Me</motion.button>
             <motion.button whileHover={HoverStyle}>Work</motion.button>
             <motion.button whileHover={HoverStyle}>Contact Me</motion.button>
