@@ -15,7 +15,7 @@ const WorkText = () => {
   const [greenShow, setGreenShow] = useState(false);
 
   /// workNext page
-  const [openWork, setOpenWork] = useAtom(WorkButtonStatus);
+  const [openWork] = useAtom(WorkButtonStatus);
   return (
     <>
       {openWork ? <WorkNextPage /> : " "}
